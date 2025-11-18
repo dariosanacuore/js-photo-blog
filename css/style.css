@@ -57,10 +57,19 @@ img {
 .card {
     background-color: white;
     padding: 10px;
+    position: relative;
 }
 
-.card:hover {
+.pin {
+    position: absolute;
+    top: 0px;
+    left: 140px;
+
+}
+
+.card:hover .pin {
     transform: scale(1.1) rotate(3deg);
+    display: none;
 }
 
 figcaption {
@@ -69,4 +78,20 @@ figcaption {
 
 .text-title-card {
     font-size: 1.5rem;
+}
+
+/**progress bar*/
+.bar {
+    margin: 100px auto;
+    width: 300px;
+    height: 20px;
+    background: #ddd;
+    border-radius: 10px;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: green;
+    border-radius: 10px;
 }
