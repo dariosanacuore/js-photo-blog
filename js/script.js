@@ -33,18 +33,50 @@ startProgressBar();
 
 function cardsPrint(cardArray) {
     let cardOutput = "";
+    cardPrint.innerHTML = "";
     cardArray.forEach(function (cardElem) {
-        cardOutput += `
-            <div class="col">
-                    <div class="card">
-                        <div class="card-image"><img src="${cardElem.url}" />
-                            <figcaption>${cardElem.date}<br> <span class="text-title-card"><strong>${cardElem.title}</strong></span></figcaption>
-                            <span class="pin"><img src="../img/pin.svg" />
-                        </div>
-                    </div>
-                </div>
-            `
-        console.log(cardElem.url);
+        const colDiv = document.createElement("div");
+        colDiv.classList.add("col");
+
+        const cardDiv = document.createElement("div");
+        cardDiv.classList.add("card");
+
+        const imageDiv = document.createElement("div");
+        imageDiv.classList.add("card-image");
+
+        const img = document.createElement("img");
+        img.src = cardElem.url;
+        img.alt = cardElem.title;
+
+        const figcaption = document.createElement("figcaption");
+        figcaption.innerHTML = `${cardElem.date}<br><span class="text-title-card"><strong>${cardElem.title}</strong></span>`;
+
+        const pinSpan = document.createElement("span");
+        pinSpan.classList.add("pin");
+        const pinImg = document.createElement("img");
+        pinImg.src = "../img/pin.svg";
+        pinImg.alt = "pin";
+        pinSpan.appendChild(pinImg);
+
+        imageDiv.appendChild(img);
+        imageDiv.appendChild(figcaption);
+        imageDiv.appendChild(pinSpan);
+
+        cardDiv.appendChild(imageDiv);
+        colDiv.appendChild(cardDiv);
+
+        cardPrint.appendChild(colDiv);
+        //cardOutput += `
+        //<div class="col">
+        // <div class="card">
+        //<div class="card-image"><img src="${cardElem.url}" />
+        //<figcaption>${cardElem.date}<br> <span class="text-title-card"><strong>${cardElem.title}</strong></span></figcaption>
+        //<span class="pin"><img src="../img/pin.svg" />
+        //</div>
+        //</div>
+        //</div>
+        //`
+        //console.log(cardElem.url);
     });
-    cardPrint.innerHTML = cardOutput;
+    //cardPrint.innerHTML = cardOutput;
 }
