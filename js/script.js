@@ -17,21 +17,7 @@ function startProgressBar() {
                     .then((resp) => {
                         const cardArray = resp.data;
                         console.log(cardArray);
-                        let cardOutput = "";
-                        cardArray.forEach(function (cardElem) {
-                            cardOutput += `
-            <div class="col">
-                    <div class="card">
-                        <div class="card-image"><img src="${cardElem.url}" />
-                            <figcaption>${cardElem.date}<br> <span class="text-title-card"><strong>${cardElem.title}</strong></span></figcaption>
-                            <span class="pin"><img src="../img/pin.svg" />
-                        </div>
-                    </div>
-                </div>
-            `
-                            console.log(cardElem.url);
-                        });
-                        cardPrint.innerHTML = cardOutput;
+                        cardsPrint(cardArray);
 
 
                     });
@@ -45,3 +31,20 @@ function startProgressBar() {
 }
 startProgressBar();
 
+function cardsPrint(cardArray) {
+    let cardOutput = "";
+    cardArray.forEach(function (cardElem) {
+        cardOutput += `
+            <div class="col">
+                    <div class="card">
+                        <div class="card-image"><img src="${cardElem.url}" />
+                            <figcaption>${cardElem.date}<br> <span class="text-title-card"><strong>${cardElem.title}</strong></span></figcaption>
+                            <span class="pin"><img src="../img/pin.svg" />
+                        </div>
+                    </div>
+                </div>
+            `
+        console.log(cardElem.url);
+    });
+    cardPrint.innerHTML = cardOutput;
+}
