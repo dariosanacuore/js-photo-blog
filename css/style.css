@@ -17,7 +17,7 @@ header {
 }
 
 .container {
-    height: 150vh;
+    min-height: 100vh;
     background-image: url("../img/cork.png");
 }
 
@@ -61,4 +61,8 @@ img {
 
 figcaption {
     font-family: "Sometype Mono", monospace;
+}
+
+.text-title-card {
+    font-size: 1.5rem;
 }

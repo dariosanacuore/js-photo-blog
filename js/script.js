@@ -10,7 +10,7 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
             <div class="col">
                     <div class="card">
                         <div class="card-image"><img src="${cardElem.url}" />
-                            <figcaption>${cardElem.date}<br> ${cardElem.title}</figcaption>
+                            <figcaption>${cardElem.date}<br> <span class="text-title-card"><strong>${cardElem.title}</strong></span></figcaption>
                         </div>
                     </div>
                 </div>

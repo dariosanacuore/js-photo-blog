@@ -1,0 +1,13 @@
+@media screen and (max-width:768px) {
+    .col {
+        width: calc(100% / 2 - (20px * 2 / 3));
+    }
+
+}
+
+@media screen and (max-width:425px) {
+    .col {
+        width: calc(100% - (20px * 2 / 3));
+    }
+
+}
