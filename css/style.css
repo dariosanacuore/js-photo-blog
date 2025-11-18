@@ -58,3 +58,7 @@ img {
     background-color: white;
     padding: 10px;
 }
+
+figcaption {
+    font-family: "Sometype Mono", monospace;
+}
