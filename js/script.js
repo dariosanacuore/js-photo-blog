@@ -47,14 +47,25 @@ function cardsPrint(cardArray) {
         const img = document.createElement("img");
         img.src = cardElem.url;
         img.alt = cardElem.title;
-        //Button overlay
+        //Button overlay-open
         const overlayContainer = document.querySelector(".overlay-container");
         const overlayContent = document.querySelector(".overlay-content");
         const btnClose = document.querySelector(".btn-close");
         img.addEventListener("click", function () {
             overlayContainer.style.display = "flex";
+            overlayContainer.style.cursor = "default";
+
             overlayContent.style.display = "inline-block";
+            overlayContent.style.cursor = "default";
+
             btnClose.style.display = "inline-block";
+        });
+
+        //Button overlay-close
+        btnClose.addEventListener("click", function () {
+            overlayContainer.style.display = "none";
+            overlayContent.style.display = "none";
+            btnClose.style.display = "none";
         });
 
         const figcaption = document.createElement("figcaption");
