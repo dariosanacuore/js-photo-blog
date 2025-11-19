@@ -75,6 +75,11 @@ function cardsPrint(cardArray) {
             overlayContent.style.display = "none";
             btnClose.style.display = "none";
         });
+        overlayContainer.addEventListener("click", function () {
+            overlayContainer.style.display = "none";
+            overlayContent.style.display = "none";
+            btnClose.style.display = "none";
+        });
 
         const figcaption = document.createElement("figcaption");
         figcaption.innerHTML = `${cardElem.date}<br><span class="text-title-card"><strong>${cardElem.title}</strong></span>`;
