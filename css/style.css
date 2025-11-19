@@ -73,6 +73,10 @@ img {
     display: none;
 }
 
+.card:hover {
+    transform: scale(1.2)rotate(10deg);
+}
+
 figcaption {
     font-family: "Sometype Mono", monospace;
 }
