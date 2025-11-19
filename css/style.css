@@ -111,6 +111,7 @@ figcaption {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
     cursor: pointer;
+    display: none
 }
 
 .overlay-content {
@@ -126,4 +127,5 @@ figcaption {
     border-style: none;
     border-radius: 4px;
     cursor: pointer;
+    display: none
 }

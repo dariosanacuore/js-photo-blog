@@ -47,6 +47,15 @@ function cardsPrint(cardArray) {
         const img = document.createElement("img");
         img.src = cardElem.url;
         img.alt = cardElem.title;
+        //Button overlay
+        const overlayContainer = document.querySelector(".overlay-container");
+        const overlayContent = document.querySelector(".overlay-content");
+        const btnClose = document.querySelector(".btn-close");
+        img.addEventListener("click", function () {
+            overlayContainer.style.display = "flex";
+            overlayContent.style.display = "inline-block";
+            btnClose.style.display = "inline-block";
+        });
 
         const figcaption = document.createElement("figcaption");
         figcaption.innerHTML = `${cardElem.date}<br><span class="text-title-card"><strong>${cardElem.title}</strong></span>`;
@@ -80,3 +89,5 @@ function cardsPrint(cardArray) {
     });
     //cardPrint.innerHTML = cardOutput;
 }
+
+
