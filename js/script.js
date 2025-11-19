@@ -55,10 +55,18 @@ function cardsPrint(cardArray) {
             overlayContainer.style.display = "flex";
             overlayContainer.style.cursor = "default";
 
+
             overlayContent.style.display = "inline-block";
             overlayContent.style.cursor = "default";
 
-            btnClose.style.display = "inline-block";
+            overlayContent.innerHTML = "";
+            const overlayImg = document.createElement("img");
+            overlayImg.src = cardElem.url;
+            overlayImg.alt = cardElem.title;
+            overlayContent.appendChild(overlayImg);
+
+            overlayContent.appendChild(btnClose);
+            btnClose.style.display = "block";
         });
 
         //Button overlay-close
